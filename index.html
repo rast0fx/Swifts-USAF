@@ -51,7 +51,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
     />
     <style>
+      /* Add subtle pattern to gradients */
+      .pattern-dots {
+        background-image: radial-gradient(currentColor 1px, transparent 1px);
+        background-size: 10px 10px;
+      }
+      
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      
       body {
       font-family: 'Roboto', sans-serif;
       scroll-behavior: smooth;
@@ -244,60 +251,96 @@
   </head>
   <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full bg-black/30 z-50 border-b border-gray-700/50 py-1">
+    <nav class="fixed top-0 left-0 w-full bg-gradient-to-r from-gray-900/95 to-gray-800/95 backdrop-blur-md shadow-lg z-50 border-b border-gray-700/30 transition-all duration-300 py-0">
       <div class="container mx-auto px-4 lg:px-8">
-        <div class="flex justify-between items-center h-14">
+        <div class="flex justify-between items-center h-16">
           <!-- Logo -->
-          <a href="#" class="flex items-center space-x-2 group">
-            <img src="https://i.postimg.cc/Dwc1t4GN/1195105989238739004-removebg-preview.png" alt="Logo" class="w-10 h-10">
-            <span class="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">MUFFIN'S USAF</span>
+          <a href="#" class="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105">
+            <img 
+              src="https://i.postimg.cc/Dwc1t4GN/1195105989238739004-removebg-preview.png" 
+              alt="Logo" 
+              class="w-10 h-10 transform transition-transform duration-500 group-hover:rotate-12"
+            >
+            <span class="text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-tight">MUFFIN'S USAF</span>
           </a>
           
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-6">
-            <a href="#home" class="nav-link group relative text-white hover:text-blue-300 transition-colors scroll-link font-medium">
-              <span class="relative group-hover:after:scale-x-100 after:absolute after:w-full after:h-0.5 after:bg-blue-400 after:left-0 after:-bottom-1 after:origin-left after:scale-x-0 after:transition-transform">Home</span>
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#home" class="nav-item group relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 scroll-link font-medium">
+              <span class="relative">
+                <i class="ri-home-4-line mr-2"></i>Home
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </span>
             </a>
-            <a href="#command" class="nav-link group relative text-white hover:text-blue-300 transition-colors scroll-link font-medium">
-              <span class="relative group-hover:after:scale-x-100 after:absolute after:w-full after:h-0.5 after:bg-blue-400 after:left-0 after:-bottom-1 after:origin-left after:scale-x-0 after:transition-transform">Leadership</span>
+            <a href="#command" class="nav-item group relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 scroll-link font-medium">
+              <span class="relative">
+                <i class="ri-team-line mr-2"></i>Leadership
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </span>
             </a>
-            <a href="#games" class="nav-link group relative text-white hover:text-blue-300 transition-colors scroll-link font-medium">
-              <span class="relative group-hover:after:scale-x-100 after:absolute after:w-full after:h-0.5 after:bg-blue-400 after:left-0 after:-bottom-1 after:origin-left after:scale-x-0 after:transition-transform">Games</span>
+            <a href="#commands" class="nav-item group relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 scroll-link font-medium">
+              <span class="relative">
+                <i class="ri-command-line mr-2"></i>Commands
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </span>
             </a>
-            <a href="#gallery" class="nav-link group relative text-white hover:text-blue-300 transition-colors scroll-link font-medium">
-              <span class="relative group-hover:after:scale-x-100 after:absolute after:w-full after:h-0.5 after:bg-blue-400 after:left-0 after:-bottom-1 after:origin-left after:scale-x-0 after:transition-transform">Gallery</span>
+            <a href="#games" class="nav-item group relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 scroll-link font-medium">
+              <span class="relative">
+                <i class="ri-gamepad-line mr-2"></i>Experiences
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </span>
             </a>
-           
-      
+            <a href="#gallery" class="nav-item group relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 scroll-link font-medium">
+              <span class="relative">
+                <i class="ri-image-line mr-2"></i>Gallery
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+              </span>
+            </a>
           </div>
           
           <!-- Mobile menu button -->
-          <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-700 text-gray-300 hover:text-white focus:outline-none" aria-label="Menu">
-            <i class="ri-menu-line text-2xl"></i>
+          <button 
+            id="mobile-menu-button" 
+            class="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-200" 
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <i class="ri-menu-3-line text-2xl transition-transform duration-300" id="menu-icon"></i>
           </button>
         </div>
         
         <!-- Mobile menu, show/hide based on menu state -->
-        <div id="mobile-menu" class="md:hidden hidden">
-          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/80 backdrop-blur-md">
-            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 scroll-link">Home</a>
-            <a href="#command" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 scroll-link">Leadership</a>
-            <a href="#games" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 scroll-link">Games</a>
-            <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 scroll-link">Gallery</a>
-            
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900/95 backdrop-blur-lg rounded-lg mx-2 mt-1 mb-2 shadow-xl overflow-hidden transition-all duration-300 transform origin-top">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#home" class="mobile-nav-item flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-200 hover:bg-gray-800 hover:text-white transition-all duration-200 scroll-link">
+              <i class="ri-home-4-line mr-3 text-blue-400 w-5 text-center"></i>Home
+            </a>
+            <a href="#command" class="mobile-nav-item flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 scroll-link">
+              <i class="ri-team-line mr-3 text-blue-400 w-5 text-center"></i>Leadership
+            </a>
+            <a href="#commands" class="mobile-nav-item flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 scroll-link">
+              <i class="ri-command-line mr-3 text-blue-400 w-5 text-center"></i>Commands
+            </a>
+            <a href="#games" class="mobile-nav-item flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 scroll-link">
+              <i class="ri-gamepad-line mr-3 text-blue-400 w-5 text-center"></i>Experiences
+            </a>
+            <a href="#gallery" class="mobile-nav-item flex items-center px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 scroll-link">
+              <i class="ri-image-line mr-3 text-blue-400 w-5 text-center"></i>Gallery
+            </a>
           </div>
         </div>
       </div>
     </nav>
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- Background with overlay -->
+      <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="https://i.postimg.cc/ht7tdkD1/image.png" 
+          src="https://i.postimg.cc/3J7LWcp4/Untitled.webp" 
           alt="USAF Aircraft in Formation"
-          class="w-full h-full object-cover object-center"
-          loading="eager"
+          class="w-full h-full object-cover object-left"
+          style="object-position: 43% center"
+          loading="lazy"
         >
       </div>
       
@@ -356,12 +399,12 @@
       </div>
     </section>
     <!-- Chain of Command Section -->
-    <section id="command" class="py-20 bg-white">
+    <!-- Chain of Command Section -->
+    <section id="command" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-10"></div>
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold heading-font text-gray-800 mb-4">
-            USAF Chain of Command
-          </h2>
+          <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">Chain of Command</h2>
           <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto">
             Meet our leadership team responsible for operations, training, and
@@ -403,7 +446,7 @@
                 class="flex items-center space-x-2 text-sm text-gray-500 mb-4"
               >
                 <i class="ri-discord-fill text-indigo-500"></i>
-                <span>@muffinsstink</span>
+                <span>@swift_cupric</span>
                 <button class="ml-2 text-primary hover:text-primary/80">
                   <i class="ri-file-copy-line"></i>
                 </button>
@@ -453,7 +496,7 @@
             <div class="p-6">
               <div class="flex justify-between items-start mb-4">
                 <h3 class="text-xl font-bold heading-font text-gray-800">
-                  SnippyMonologue
+                  snippybro
                 </h3>
                 <div
                   class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
@@ -468,7 +511,7 @@
                 class="flex items-center space-x-2 text-sm text-gray-500 mb-4"
               >
                 <i class="ri-discord-fill text-indigo-500"></i>
-                <span>@SnippyMonologue</span>
+                <span>@_snxppy</span>
                 <button class="ml-2 text-primary hover:text-primary/80">
                   <i class="ri-file-copy-line"></i>
                 </button>
@@ -531,7 +574,7 @@
                 class="flex items-center space-x-2 text-sm text-gray-500 mb-4"
               >
                 <i class="ri-discord-fill text-indigo-500"></i>
-                <span>@Nvldte</span>
+                <span>@nvldte</span>
                 <button class="ml-2 text-primary hover:text-primary/80">
                   <i class="ri-file-copy-line"></i>
                 </button>
@@ -596,7 +639,7 @@
                 class="flex items-center space-x-2 text-sm text-gray-500 mb-4"
               >
                 <i class="ri-discord-fill text-indigo-500"></i>
-                <span>@BeDeBeDeDoo2</span>
+                <span>@bedethebede</span>
                 <button class="ml-2 text-primary hover:text-primary/80">
                   <i class="ri-file-copy-line"></i>
                 </button>
@@ -659,7 +702,7 @@
                 class="flex items-center space-x-2 text-sm text-gray-500 mb-4"
               >
                 <i class="ri-discord-fill text-indigo-500"></i>
-                <span>@440ThePowerWasher</span>
+                <span>@440thepowerwasher</span>
                 <button class="ml-2 text-primary hover:text-primary/80">
                   <i class="ri-file-copy-line"></i>
                 </button>
@@ -758,7 +801,127 @@
         </div>
       </div>
     </section>
-<!-- CTA Section -->
+
+    <!-- Commands Section -->
+    <!-- Commands Section -->
+    <section id="commands" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')] opacity-5"></div>
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">Our Commands</h2>
+          <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            The United States Air Force is organized into several major commands, each with distinct missions and responsibilities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Security Forces -->
+          <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+            <div class="bg-primary/5 p-3 text-center">
+              <p class="text-sm italic text-gray-600">"Defensor Fortis - Defender of the Force"</p>
+            </div>
+            <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+              <img src="https://i.postimg.cc/HLL4bGsn/image.webp" alt="Security Forces" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Security Forces</h3>
+              <p class="text-gray-600 mb-4">
+                The U.S. Air Force Security Forces (SF) are the military police and ground defense force of the Air Force. They protect bases, enforce laws, and respond to threats and emergencies.
+              </p>
+              <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">Active</span>
+            </div>
+          </div>
+
+          <!-- Public Affairs -->
+          <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+            <div class="bg-primary/5 p-3 text-center">
+              <p class="text-sm italic text-gray-600">"Voice of the Air Force"</p>
+            </div>
+            <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+              <img src="https://i.postimg.cc/gjG06pmB/image.webp" alt="Public Affairs" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Public Affairs</h3>
+              <p class="text-gray-600 mb-4">
+                Air Force Public Affairs manages communication, media relations, and international diplomacy for the U.S. Air Force. They build alliances, handle public messaging, and maintain the Air Force’s image worldwide.
+              </p>
+              <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">Active</span>
+            </div>
+          </div>
+
+          <!-- Air Force Exchange -->
+          <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+            <div class="bg-primary/5 p-3 text-center">
+              <p class="text-sm italic text-gray-600">"We Go Where You Go"</p>
+            </div>
+            <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+              <img src="https://i.postimg.cc/gJZhKG9z/eb08389bf918df74aae67d43ff5aa7b7.webp" alt="Air Force Exchange" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Air Force Exchange</h3>
+              <p class="text-gray-600 mb-4">
+                The Air Force Exchange ensures airmen's uniforms are properly fitted, comfortable, and professional in appearance. They help maintain a sharp, consistent image across the Air Force.
+              </p>
+              <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">Active</span>
+            </div>
+          </div>
+
+          <!-- Special Operations Command -->
+          <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+            <div class="bg-primary/5 p-3 text-center">
+              <p class="text-sm italic text-gray-600">"Any Time, Any Place"</p>
+            </div>
+            <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+              <img src="https://i.postimg.cc/fLGc4J7S/image.webp" alt="Special Operations Command" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Special Operations Command</h3>
+              <p class="text-gray-600 mb-4">
+                Air Force Special Operations Command (AFSOC) provides highly trained, rapidly deployable forces for global special operations missions. Their roles include precision strikes, infiltration, support, and intelligence operations to support unified combatant commands.
+              </p>
+              <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">Active</span>
+            </div>
+          </div>
+
+       
+
+          <!-- Air Education and Training Command -->
+          <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+            <div class="bg-primary/5 p-3 text-center">
+              <p class="text-sm italic text-gray-600">"Aim High... Fly-Fight-Win"</p>
+            </div>
+            <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+              <img src="https://i.postimg.cc/8zZLpyBS/image.webp" alt="Air Education and Training Command" class="max-h-full max-w-full object-contain">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Air Education and Training Command</h3>
+              <p class="text-gray-600 mb-4">
+                Air Education & Training Command (AETC) is responsible for transforming civilians into Airmen and developing future leaders of the U.S. Air Force. They provide essential training and education to prepare personnel for mission readiness and leadership roles.
+              </p>
+              <span class="inline-block px-3 py-1 bg-gray-200 text-gray-500 text-sm font-medium rounded-full">Currently Closed</span>
+            </div>
+          </div>
+   <!-- Community Staff -->
+   <div class="command-card bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:border-primary/50 transition-all duration-300">
+    <div class="bg-primary/5 p-3 text-center">
+      <p class="text-sm italic text-gray-600">"Serving Those Who Serve"</p>
+    </div>
+    <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center p-4">
+      <img src="https://i.postimg.cc/dtMBpSnN/image.webp" alt="Community Staff" class="max-h-full max-w-full object-contain">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-bold heading-font text-gray-800 mb-2">Community Staff</h3>
+      <p class="text-gray-600 mb-4">
+        The Community Staff (CS) operates under the Air Staff+ and is responsible for maintaining the group’s image and safeguarding the community. It oversees the Moderation Team, which helps enforce rules and ensure a safe server environment. The Events Team, also part of CS, organizes activities to keep the community engaged and active.
+      </p>
+      <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full">Active</span>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- CTA Section -->
 <section
 class="py-20 bg-primary text-white section-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=A%20dramatic%2C%20cinematic%20military%20aircraft%20silhouette%20against%20a%20blue%20sky%20with%20dramatic%20clouds%2C%20low%20contrast%20to%20use%20as%20website%20background%2C%20subtle%2C%20not%20distracting%2C%20perfect%20for%20text%20overlay&width=1920&height=600&seq=18&orientation=landscape'); background-size: cover; background-position: center;"
 >
@@ -777,17 +940,20 @@ class="py-20 bg-primary text-white section-hidden" style="background-image: url(
 
 
     <!-- Games Section -->
-    <section id="games" class="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="games" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/clean-gray-paper.png')] opacity-10"></div>
       <div class="container mx-auto px-4 sm:px-6">
         <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">Our Games</h2>
+          <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">Our Experiences</h2>
           <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto mb-6 rounded-full"></div>
           <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Experience the thrill of aviation and military operations through our selection of games.
           </p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+       
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Game Card 1 -->
           <div class="game-card group relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
             <div class="relative overflow-hidden h-56">
@@ -903,7 +1069,9 @@ class="py-20 bg-primary text-white section-hidden" style="background-image: url(
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="gallery" class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')] opacity-5"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       <div class="container mx-auto px-4 sm:px-6">
         <div class="text-center mb-16">
           
@@ -1112,5 +1280,80 @@ class="py-20 bg-primary text-white section-hidden" style="background-image: url(
         </div>
       </div>
     </footer>
+    <!-- JavaScript for mobile menu and smooth scrolling -->
+    <script>
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('active');
+        menuIcon.classList.toggle('active');
+        
+        // Toggle between menu and close icon
+        if (isExpanded) {
+          menuIcon.classList.remove('ri-close-line');
+          menuIcon.classList.add('ri-menu-3-line');
+        } else {
+          menuIcon.classList.remove('ri-menu-3-line');
+          menuIcon.classList.add('ri-close-line');
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.mobile-nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuIcon.classList.remove('active');
+          menuIcon.classList.remove('ri-close-line');
+          menuIcon.classList.add('ri-menu-3-line');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for fixed header
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Navbar scroll effect
+      let lastScroll = 0;
+      const navbar = document.querySelector('nav');
+      
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+          navbar.classList.remove('scrolled');
+          return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+          // Scrolling down
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up
+          navbar.style.transform = 'translateY(0)';
+          navbar.classList.add('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
+    </script>
   </body>
 </html>
