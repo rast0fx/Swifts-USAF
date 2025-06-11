@@ -293,7 +293,7 @@
               alt="Logo" 
               class="w-10 h-10 transform transition-transform duration-500 group-hover:rotate-12"
             >
-            <span class="text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-tight">Swift's USAF</span>
+            <span class="text-xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-tight">MUFFIN'S USAF</span>
           </a>
           
           <!-- Desktop Navigation -->
@@ -374,68 +374,69 @@
     </nav>
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- Background Image -->
+      <!-- Background Image with better mobile positioning -->
       <div class="absolute inset-0 z-0">
         <img 
           src="https://i.postimg.cc/3J7LWcp4/Untitled.webp" 
           alt="USAF Aircraft in Formation"
-          class="w-full h-full object-cover object-left"
-          style="object-position: 43% center"
-          loading="lazy"
+          class="w-full h-full object-cover md:object-left"
+          style="object-position: 60% center"
+          loading="eager"
         >
+        <div class="absolute inset-0 bg-black/40 md:bg-black/30"></div>
       </div>
       
       <!-- Content -->
-      <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="max-w-4xl px-4 sm:px-6 lg:px-8">
-          <!-- Main Heading with improved contrast -->
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-white drop-shadow-lg">JOIN THE</span><br>
-            <span class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-blue-100 drop-shadow-xl">U.S. AIR FORCE</span>
+      <div class="container mx-auto px-4 sm:px-6 relative z-10">
+        <div class="max-w-4xl px-2 sm:px-4 lg:px-6 py-20 sm:py-24">
+          <!-- Main Heading with improved mobile sizing -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+            <span class="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-white drop-shadow-lg">JOIN THE</span>
+            <span class="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-blue-100 drop-shadow-xl mt-2 sm:mt-3">U.S. AIR FORCE</span>
           </h1>
           
-          <!-- Subheading with improved contrast -->
-          <p class="text-xl md:text-2xl text-gray-100 mb-10 max-w-2xl leading-relaxed drop-shadow-lg">
+          <!-- Subheading with improved mobile sizing -->
+          <p class="text-lg sm:text-xl md:text-2xl text-gray-100 mb-8 sm:mb-10 max-w-2xl leading-relaxed drop-shadow-lg">
             "𝑭𝒍𝒚, 𝑭𝒊𝒈𝒉𝒕, 𝑾𝒊𝒏"
           </p>
           
-          <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-            <a href="https://www.roblox.com/communities/33334312/United-Stat-s-ir-Forc#!/about" class="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden text-lg font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 rounded-full hover:from-blue-500 hover:to-blue-400 transition-all duration-300 shadow-xl hover:shadow-blue-500/30">
+          <!-- CTA Buttons with better mobile sizing -->
+          <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+            <a href="https://www.roblox.com/communities/33334312/United-Stat-s-ir-Forc#!/about" class="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 overflow-hidden text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 rounded-full hover:from-blue-500 hover:to-blue-400 transition-all duration-300 shadow-xl hover:shadow-blue-500/30">
               <span class="relative z-10 flex items-center">
-                <i class="ri-user-add-line mr-3 text-xl"></i>
+                <i class="ri-user-add-line mr-2 sm:mr-3 text-lg sm:text-xl"></i>
                 ENLIST TODAY
               </span>
               <span class="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
             </a>
             
-            <a href="https://discord.gg/Gek24gyBTS" class="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden text-lg font-medium text-white border-2 border-white/30 rounded-full hover:border-blue-400 hover:text-blue-200 transition-all duration-300">
+            <a href="https://discord.gg/Gek24gyBTS" class="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 overflow-hidden text-base sm:text-lg font-medium text-white border-2 border-white/30 rounded-full hover:border-blue-400 hover:text-blue-200 transition-all duration-300">
               <span class="relative z-10 flex items-center">
-                <i class="ri-discord-fill mr-3 text-xl"></i>
+                <i class="ri-discord-fill mr-2 sm:mr-3 text-lg sm:text-xl"></i>
                 JOIN OUR DISCORD
               </span>
               <span class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
             </a>
           </div>
           
-          <!-- Stats -->
-          <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl">
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-1">2,300+</div>
-              <div class="text-sm text-gray-400 uppercase tracking-wider">Active Members</div>
+          <!-- Stats with better mobile layout -->
+          <div class="mt-12 sm:mt-16 grid grid-cols-2 gap-4 sm:gap-6 max-w-md mx-auto sm:max-w-3xl">
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+              <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1">2,300+</div>
+              <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Active Members</div>
             </div>
-            <div class="text-center">
-              <div class="text-3xl md:text-4xl font-bold text-blue-300 mb-1">6+</div>
-              <div class="text-sm text-gray-400 uppercase tracking-wider">Commands</div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center border border-white/10">
+              <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-300 mb-1">6+</div>
+              <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Commands</div>
             </div>
           </div>
         </div>
       </div>
       
       <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        <div class="w-8 h-12 border-4 border-blue-400 rounded-full flex justify-center p-1">
-          <div class="w-1 h-2 bg-blue-400 rounded-full mt-2"></div>
+      <div class="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <div class="w-7 h-10 sm:w-8 sm:h-12 border-3 sm:border-4 border-blue-400 rounded-full flex justify-center p-1">
+          <div class="w-1 h-2 bg-blue-400 rounded-full mt-1 sm:mt-2"></div>
         </div>
       </div>
     </section>
@@ -1497,14 +1498,13 @@ class="py-20 bg-primary text-white section-hidden" style="background-image: url(
             <li><a href="#home" class="hover:text-white transition-colors text-lg">Home</a></li>
             <li><a href="#command" class="hover:text-white transition-colors text-lg">Leadership</a></li>
             <li><a href="#commands" class="hover:text-white transition-colors text-lg">Commands</a></li>
-<li><a href="#deployments" class="hover:text-white transition-colors text-lg">Deployments</a></li>
             <li><a href="#games" class="hover:text-white transition-colors text-lg">Experiences</a></li>
             <li><a href="#gallery" class="hover:text-white transition-colors text-lg">Gallery</a></li>
-            
+            <li><a href="#deployments" class="hover:text-white transition-colors text-lg">Deployments</a></li>
             
           </ul>
           <div class="mt-8 text-sm text-gray-500">
-            <p>© 2025 Swift's USAF. All rights reserved.</p>
+            <p>© 2025 Muffin's USAF. All rights reserved.</p>
           </div>
         </div>
       </div>
